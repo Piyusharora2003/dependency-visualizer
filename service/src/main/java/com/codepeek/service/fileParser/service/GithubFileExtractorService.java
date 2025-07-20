@@ -3,6 +3,7 @@ package com.codepeek.service.fileParser.service;
 import com.codepeek.service.common.CustomException;
 import com.codepeek.service.fileParser.interfaces.FileExtractorServiceInterface;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -14,6 +15,7 @@ import java.nio.file.Files;
 
 @Service
 @Slf4j
+@Qualifier("gitFileParser")
 public class GithubFileExtractorService implements FileExtractorServiceInterface {
     public File getFileFromUrl(String githubUrl) throws CustomException {
         if (githubUrl.contains("github.com") && githubUrl.contains("/blob/")) {
@@ -38,5 +40,6 @@ public class GithubFileExtractorService implements FileExtractorServiceInterface
         } catch (Exception e) {
             throw new CustomException(e.getMessage());
         }
+
     }
 }

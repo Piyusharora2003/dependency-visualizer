@@ -26,7 +26,8 @@ public class FileParserController {
 
     @PostMapping("/")
     Map<String, List<String>> getFileParseResult(@RequestBody @NotNull FileInputData fileInputData) {
-        log.info("File parsing request received for url: {}", fileInputData.getFileUrl());
-        return fileParserService.getFile(fileInputData.getFileUrl());
+//        log.info("File parsing request received for url: {}", fileInputData.getFileUrl());
+        return fileParserService.getFile("src/main/java/com/codepeek/service/OrderService.java");
+//        return fileParserService.getFile(fileInputData.getFileUrl());
     }
 }
