@@ -1,4 +1,4 @@
-package com.codepeek.service.fileParser.model;
+package com.codepeek.service.folderParser.model;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package com.codepeek.service.fileParser.service;
+package com.codepeek.service.downloadFile.services;
 
 import com.codepeek.service.common.CustomException;
-import com.codepeek.service.fileParser.interfaces.FileExtractorServiceInterface;
+import com.codepeek.service.downloadFile.interfaces.DownloadFileServiceInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,8 @@ import java.nio.file.Files;
 
 @Service
 @Slf4j
-@Qualifier("gitFileParser")
-public class GithubFileExtractorService implements FileExtractorServiceInterface {
+@Qualifier("gitFileDownload")
+public class GithubFileDownloadService implements DownloadFileServiceInterface {
     public File getFileFromUrl(String githubUrl) throws CustomException {
         if (githubUrl.contains("github.com") && githubUrl.contains("/blob/")) {
             githubUrl = githubUrl.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/");
