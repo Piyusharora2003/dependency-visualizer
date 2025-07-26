@@ -24,6 +24,6 @@ public class ParserController {
 
     @PostMapping("/uploadLink")
     DependencyGraph getParseResult(@RequestBody @NotNull FileInputData fileInputData) {
-        return fileParserService.getDependencyGraph(fileInputData.getFileUrl());
+        return fileParserService.getDependencyGraph(fileInputData);
     }
 }

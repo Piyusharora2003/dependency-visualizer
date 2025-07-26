@@ -6,5 +6,7 @@ import lombok.Data;
 @Builder
 @Data
 public class FileInputData {
-    String fileUrl;
+    private String url;
+    private String urlType;
+    private String githubAccessToken;
 }
